@@ -1,17 +1,14 @@
 package net.hynse.nuhuh;
 
+import net.hynse.nuhuh.listeners.EndermanPickupListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Nuhuh extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
-
+        // Register the event listener
+        getServer().getPluginManager().registerEvents(new EndermanPickupListener(), this);
     }
 
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
-    }
 }
